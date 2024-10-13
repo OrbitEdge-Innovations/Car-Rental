@@ -1,5 +1,8 @@
 #include <iostream>
 #include "newCar.cpp"
+#include "AdminMenu.cpp"
+#include "UserMenu.cpp"
+#include "ShowRoom.cpp"
 using namespace std;
 
 int main()
@@ -41,4 +44,24 @@ int main()
         }
         Sleep(3000);
     }
+
+    User user;
+    Showroom showroom;
+
+    // Simulating a login system
+    string id, pass;
+    cout << "Enter your ID: ";
+    cin >> id;
+    user.setID(id);
+
+    if (id == "Admin")
+    {
+        adminMenu(showroom);
+    }
+    else
+    {
+        userMenu(user, showroom);
+    }
+
+    return 0;
 }
